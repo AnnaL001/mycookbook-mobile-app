@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_categories">
+
+    <fragment
+        android:id="@+id/nav_categories"
+        android:name="com.anna.mycookbook.ui.category.CategoryListFragment"
+        android:label="@string/menu_categories"
+        tools:layout="@layout/fragment_categories_list" />
+        <action android:id="@+id/fragment_category_to_fragment_recipe"
+                app:destination="@id/nav_recipes"
+                app:enterAnim="@android:animator/fade_in"
+                app:exitAnim="@android:animator/fade_out" />
+
+    <fragment
+        android:id="@+id/nav_starred"
+        android:name="com.anna.mycookbook.ui.starred.StarredListFragment"
+        android:label="@string/menu_starred"
+        tools:layout="@layout/fragment_starred_list" />
+
+    <fragment
+        android:id="@+id/nav_recipe_list_item"
+        android:name="com.anna.mycookbook.ui.recipeitem.RecipeItemFragment"
+        tools:layout="@layout/fragment_recipe_list_item" />
+        <action android:id="@+id/fragment_recipe_item_to_fragment_starr_list"
+            app:destination="@id/nav_starred"
+            app:enterAnim="@android:animator/fade_in"
+            app:exitAnim="@android:animator/fade_out" />
+
+    <fragment
+        android:id="@+id/nav_recipes"
+        android:name="com.anna.mycookbook.ui.recipe.RecipeListFragment"
+        android:label="@string/menu_recipes"
+        tools:layout="@layout/fragment_recipes_list" />
+        <action android:id="@+id/fragment_recipe_to_fragment_recipe_item"
+            app:destination="@id/nav_recipe_list_item"
+            app:enterAnim="@android:animator/fade_in"
+            app:exitAnim="@android:animator/fade_out" />
+
+
+</navigation>
